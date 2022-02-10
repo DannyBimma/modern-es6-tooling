@@ -1,0 +1,15 @@
+{
+  "name": "modern-js-tooling",
+  "version": "1.0.0",
+  "description": "a test i guess ",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dannybimma",
+  "license": "ISC",
+  "dependencies": {
+    "leaflet": "^1.7.1",
+    "lodash-es": "^4.17.21"
+  }
+}

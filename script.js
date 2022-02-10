@@ -23,6 +23,8 @@ console.log(cart.cartItems);
 
 // Importing default modules:
 import partsTotal from './cart.js';
+import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+
 partsTotal(`Ferrari 488`, `Whipple Turbo Charger`, 80.42);
 
 ////////////////////////////////////////////////////////////////////
@@ -84,3 +86,31 @@ ShoppingCart2.addToCart('pizza', 2);
 console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost);
 ////////////////////////////////////////////////////////////////////
+
+// Use cloneDeep method from lodash (in npm) to copy deeply nested object:
+const profile = {
+  id: [
+    {
+      realName: `Daniel Trotman`,
+      alias: `Danny Bimma`,
+    },
+    {
+      heroName: `Supreme Leader Sir Leonidas Andretti First of His Name King of the World`,
+      fantasyAlias: `Sir Leon`,
+    },
+  ],
+  age: 28,
+  vitals: { alive: true, healthBar: 100 },
+};
+
+// Clone profile with with built-in JS method:
+const profileClone = Object.assign({}, profile);
+// Do the same with cloneDeep:
+const profileCloneDeep = cloneDeep(profile);
+
+// Change a nested property value in the original:
+profile.vitals.healthBar = 99;
+
+// Check the differences between the clones:
+console.log(profileClone);
+console.log(profileCloneDeep);
