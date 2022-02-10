@@ -3,6 +3,13 @@
 // Exported Module:
 console.log(`Exported Module`);
 
+////////////////////////////////////////////////////////////////////
+// Blocking code:
+// console.log(`Fetching Posts...`);
+// fetch(`https://jsonplaceholder.typicode.com/posts`);
+// console.log(`Post Fetched!`);
+////////////////////////////////////////////////////////////////////
+
 const shoppingBill = 10;
 export const cartItems = [];
 
