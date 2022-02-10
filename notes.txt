@@ -1,0 +1,15 @@
+ES6 Modules:
+Consider a scenario where parts of JavaScript code need to be reused. ES6 comes to your rescue with the concept of Modules. A module organizes a related set of JavaScript code. A module can contain variables and functions. A module is nothing more than a chunk of JavaScript code written in a file. By default, variables and functions of a module are not available for use. Variables and functions within a module should be exported so that they can be accessed from within other files. Modules in ES6 work only in strict mode. This means variables or functions declared in a module will not be accessible globally.
+
+
+The Module Pattern (using IIFEs):
+The Module Pattern is one of the important patterns in JavaScript. It is a commonly used Design Pattern which is used to wrap a set of variables and functions together in a single scope. It basically achieves the same behaviour (with way more issues) as ES6 modules, but in a single block of code instead of a separate file. In older JavaScript projects, the Module pattern is used to further emulate the concept of classes in such a way that we’re able to include both public/private methods and variables inside a single object, thus shielding particular parts from the global scope. What this results in is a reduction in the likelihood of our function names conflicting with other functions defined in additional scripts on the page
+
+- It is used to define objects and specify the variables and the functions that can be accessed from outside the scope of the function.
+- Expose certain properties and functions as public and can also restrict the scope of properties and functions within the object itself, making them private.
+- This means that those variables cannot be accessed outside the scope of the function.
+- JS achieves data hiding and abstraction using this module pattern. 
+
+
+Common JS Modules:
+Before modules were natively supported by browsers, there have been other module systems that have been used by JS devs in the past. But none of them were native JS. Common JS modules is one of those and is worth taking a look at, because they have been used in node.js for almost it's entire existence. This means that all the modules on NPM still use Common JS modules.
