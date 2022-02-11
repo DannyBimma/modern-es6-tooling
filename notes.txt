@@ -13,3 +13,6 @@ The Module Pattern is one of the important patterns in JavaScript. It is a commo
 
 Common JS Modules:
 Before modules were natively supported by browsers, there have been other module systems that have been used by JS devs in the past. But none of them were native JS. Common JS modules is one of those and is worth taking a look at, because they have been used in node.js for almost it's entire existence. This means that all the modules on NPM still use Common JS modules.
+
+Parcel:
+npm run start - enter that command in the console to run parcel after it has been set up to and has all the proper stuff in json and stuff. Just re-watch the entire Modern JS Tooling section when you're ready to actually build and deploy a website. sigh... 

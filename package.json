@@ -1,5 +1,6 @@
 {
   "name": "modern-js-tooling",
+  "browserslist": "> 0.25%, not dead",
   "version": "1.0.0",
   "description": "a test i guess ",
   "scripts": {

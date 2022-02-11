@@ -120,3 +120,15 @@ console.log(profileCloneDeep);
 if (module.hot) {
   module.hot.accept();
 }
+
+// Transpiling class fields:
+class Person {
+  greeting = `Hey!`;
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.greeting}, ${this.name}`);
+  }
+}
+
+const danny = new Person(`Danny`);
+console.log(`Danny` ?? null);
