@@ -23,7 +23,8 @@ console.log(cart.cartItems);
 
 // Importing default modules:
 import partsTotal from './cart.js';
-import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+// import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+import cloneDeep from 'lodash-es';
 
 partsTotal(`Ferrari 488`, `Whipple Turbo Charger`, 80.42);
 
@@ -38,65 +39,65 @@ partsTotal(`Ferrari 488`, `Whipple Turbo Charger`, 80.42);
 // script that comes after it, until it's execution is complete.
 
 // Get the last post from the fake data:
-const getLastPost = async function () {
-  const fakeResponse = await fetch(
-    `https://jsonplaceholder.typicode.com/posts`
-  );
-  const fakeJson = await fakeResponse.json();
-  console.log(fakeJson);
+// const getLastPost = async function () {
+//   const fakeResponse = await fetch(
+//     `https://jsonplaceholder.typicode.com/posts`
+//   );
+//   const fakeJson = await fakeResponse.json();
+//   console.log(fakeJson);
 
-  return { title: fakeJson.at(-1).title, text: fakeJson.at(-1).body };
-};
+//   return { title: fakeJson.at(-1).title, text: fakeJson.at(-1).body };
+// };
 
 // Consume the promise returned:
 // const lastPost = getLastPost();
 // lastPost.then(lp => console.log(lp));
 
-const lastPost = await getLastPost();
-console.log(lastPost);
+// const lastPost = await getLastPost();
+// console.log(lastPost);
 // p.s. - notice how the async function still executes and logs all
 // the json data, while still returning a specific value from all
 // the data.
 
 ////////////////////////////////////////////////////////////////////
 // THE MODULE PATTER:
-const ShoppingCart2 = (function () {
-  const cart = [];
-  const shippingCost = 10;
-  const totalPrice = 237;
-  const totalQuantity = 23;
-  const addToCart = function (product, quantity) {
-    cart.push({ product, quantity });
-    console.log(
-      `${quantity} ${product} added to cart (sipping cost is ${shippingCost})`
-    );
-  };
-  const orderStock = function (product, quantity) {
-    console.log(`${quantity} ${product} ordered from supplier`);
-  };
-  return {
-    addToCart,
-    cart,
-    totalPrice,
-    totalQuantity,
-  };
-})();
-ShoppingCart2.addToCart('apple', 4);
-ShoppingCart2.addToCart('pizza', 2);
-console.log(ShoppingCart2);
-console.log(ShoppingCart2.shippingCost);
+// const ShoppingCart2 = (function () {
+//   const cart = [];
+//   const shippingCost = 10;
+//   const totalPrice = 237;
+//   const totalQuantity = 23;
+//   const addToCart = function (product, quantity) {
+//     cart.push({ product, quantity });
+//     console.log(
+//       `${quantity} ${product} added to cart (sipping cost is ${shippingCost})`
+//     );
+//   };
+//   const orderStock = function (product, quantity) {
+//     console.log(`${quantity} ${product} ordered from supplier`);
+//   };
+//   return {
+//     addToCart,
+//     cart,
+//     totalPrice,
+//     totalQuantity,
+//   };
+// })();
+// ShoppingCart2.addToCart('apple', 4);
+// ShoppingCart2.addToCart('pizza', 2);
+// console.log(ShoppingCart2);
+// console.log(ShoppingCart2.shippingCost);
 ////////////////////////////////////////////////////////////////////
 
 // Use cloneDeep method from lodash (in npm) to copy deeply nested object:
 const profile = {
-  id: [
+  userCart: [
     {
-      realName: `Daniel Trotman`,
-      alias: `Danny Bimma`,
+      product: `Bread`,
+      quantity: 900,
     },
     {
-      heroName: `Supreme Leader Sir Leonidas Andretti First of His Name King of the World`,
-      fantasyAlias: `Sir Leon`,
+      product: `pizza`,
+      quantity: 1000000,
     },
   ],
   age: 28,
@@ -114,3 +115,8 @@ profile.vitals.healthBar = 99;
 // Check the differences between the clones:
 console.log(profileClone);
 console.log(profileCloneDeep);
+
+// Parcel hot module:
+if (module.hot) {
+  module.hot.accept();
+}
